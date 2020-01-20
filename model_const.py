@@ -9,7 +9,6 @@ import tensorflow as tf
 from sklearn.model_selection import train_test_split
 from keras.callbacks import EarlyStopping
 
-
 class Network(object):
     def __init__(self,channels,img_width,img_height):
         middle_activation = 'relu'
