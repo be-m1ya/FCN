@@ -1,5 +1,5 @@
 import numpy as np
-from keras.layers import Dense, Dropout, Flatten,BatchNormalization,Input,Conv2D, MaxPooling2D,Activation
+from keras.layers import Dense, Dropout, Flatten,BatchNormalization,Input,Conv2D, MaxPooling2D,Activation,merge,Conv2DTranspose
 from keras.layers.convolutional import Conv2D, MaxPooling2D
 from keras.utils import np_utils
 from keras import backend as K
