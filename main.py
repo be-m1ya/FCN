@@ -89,14 +89,14 @@ if __name__ == "__main__":
         channels = 1   
         model_ins = Network(channels,img_wigth,img_height)
         network = model_ins.get_model()
-        optimizer = tf.train.AdamOptimizer(0.000005)
+        optimizer = tf.train.AdamOptimizer(0.0005)
     
         network.compile(loss="mse", 
                         optimizer=optimizer, 
                         metrics=["mse"])
         #モデルの訓練
-        history = network.fit(trainX,
-                              trainY, 
+        history = network.fit(inputX,
+                              inputY, 
                               epochs = EPOCHS, 
                               verbose = 1,
                               batch_size = BATCH,
