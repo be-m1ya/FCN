@@ -111,6 +111,7 @@ if __name__ == "__main__":
         val_loss.append(history.history['val_mean_squared_error'][-1])
         train_loss.append(history.history['mean_squared_error'][-1])    
         dataset_size.append(train_size)
+        #appendは配列が大きいと重いので,空配列作って代入していくほうが良いかも
 
     plot_LC(dataset_size, train_loss, val_loss)
     
