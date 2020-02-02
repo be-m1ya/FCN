@@ -85,7 +85,7 @@ if __name__ == "__main__":
         inputX = trainX[:train_size,:,:,:]
         inputY = trainY[:train_size,:,:,:]
 
-        #モデル取得 
+        #model_insからモデル取得 
         channels = 1   
         model_ins = Network(channels,img_wigth,img_height)
         network = model_ins.get_model()
@@ -107,12 +107,16 @@ if __name__ == "__main__":
         
         print('which : ' + str(train_size) +' ---------------------------------------------------')
         
+        #学習過程のプロット
         plot_epochs(history,train_size)
+        
+        #ラーニングカーブ作成用に配列を追加
         val_loss.append(history.history['val_mean_squared_error'][-1])
         train_loss.append(history.history['mean_squared_error'][-1])    
         dataset_size.append(train_size)
         #appendは配列が大きいと重いので,空配列作って代入していくほうが良いかも
-
+    
+    #ラーニングカーブのプロット
     plot_LC(dataset_size, train_loss, val_loss)
     
     end = time.time()
